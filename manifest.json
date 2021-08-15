@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "测试插件",
+  "version": "1.0.0",
+  "description": "简单的Chrome扩展demo",
+  "icons": {
+    "16": "./images/file.png",
+    "48": "./images/file.png",
+    "128": "./images/file.png"
+  },
+  "background": {
+    "scripts": ["./js/background.js"]
+  },
+  "browser_action": {
+    "default_icon": "./images/logo.jpg",
+    "default_title": "这是一个示例Chrome插件",
+    "default_popup": "./src/browser_action.html"
+  },
+  "permissions": [
+    "contextMenus",
+    "declarativeContent",
+    "tabs",
+    "notifications",
+    "webRequest", 
+    "webRequestBlocking",
+    "storage", 
+    "http://*/*",
+    "https://*/*" 
+  ],
+  "web_accessible_resources": ["js/inject.js"],
+  "homepage_url": "https://www.baidu.com",
+  "chrome_url_overrides": {
+    "newtab": "./src/newtab.html"
+  },
+  "omnibox": { "keyword" : "test-plugin" },
+  "devtools_page": "./src/devtools_page.html"
+}
